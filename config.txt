@@ -1,0 +1,17 @@
+# Prerequisites:
+# (Ubuntu) sudo apt-get build-dep vim
+
+cd
+git clone https://github.com/vim/vim vim
+cd vim/src
+./configure --enable-pythoninterp --with-features=huge --prefix=$HOME/opt/vim
+make && make install
+mkdir -p $HOME/bin
+cd $HOME/bin
+ln -s $HOME/opt/vim/bin/vim
+which vim
+vim --version
+
+# on Ubuntu
+
+sudo apt-get install gtk2-engines-pixbuf
