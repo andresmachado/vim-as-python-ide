@@ -26,6 +26,19 @@ inoremap <C-A> <C-O>:update<CR>
 noremap <Leader>e :quit<CR>
 noremap <Leader>E :qa!<CR>
 
+" Real programmers don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+" Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 " Disable stupid backup and swap files
 set nobackup
 set nowritebackup
@@ -54,6 +67,10 @@ set nowrap
 set fo-=t
 set colorcolumn=80
 highlight ColorColumn ctermbg=23
+
+" Easier moving between tabs
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
 
 "=========================================
 "        PYTHON IDE CONFIGURATION        
