@@ -26,6 +26,10 @@ inoremap <C-A> <C-O>:update<CR>
 noremap <Leader>e :quit<CR>
 noremap <Leader>E :qa!<CR>
 
+" Open NERDTree
+noremap <Leader>x :NERDTreeToggle<CR>
+
+" CTRLP
 " Real programmers don't use TABs but spaces
 set tabstop=4
 set softtabstop=4
@@ -62,10 +66,10 @@ syntax on
 
 " Showing line numbers and length
 set number
-set tw=79
+set tw=99
 set nowrap
 set fo-=t
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=23
 
 " Easier moving between tabs
@@ -84,6 +88,7 @@ set laststatus=2
 " Settings for ctrlp
 " cd ~/.vim/bundle
 " git clone https://github.com/kien/ctrlp.vim.git
+lnoremap <C-P> :CtrlP<CR>
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
@@ -100,7 +105,12 @@ let g:pymode_breakpoint = 0
 let g:pymode_syntax = 1
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
+let g:pymode_python = 'python3'
 map <Leader>b Oimport ipdb; ipdb.set_trace()
+
+" Enable Smart tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 "Better navigating through omnicomplete option list
 set completeopt=longest,menuone
@@ -131,3 +141,5 @@ autocmd FileType ruby imap <buffer> <C-n> <Plug>(xmpfilter-mark)
 autocmd FileType ruby nmap <buffer> <C-r> <Plug>(xmpfilter-run)
 autocmd FileType ruby xmap <buffer> <C-r> <Plug>(xmpfilter-run)
 autocmd FileType ruby imap <buffer> <C-r> <Plug>(xmpfilter-run)
+
+nnoremap <CR> :noh<CR><CR>
